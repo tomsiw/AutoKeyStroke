@@ -168,6 +168,7 @@ namespace Clicker
                         return;
 
                     Gui(countDownLabel, c => c.Text = stroke.ToString());
+                    Gui(keyStrokeListBox, l => l.SelectedItem = stroke);
 
                     foreach (var k in stroke.MsTestKeys)
                         Keyboard.Press(k);
@@ -195,7 +196,8 @@ namespace Clicker
             }
         }
 
-        public void Gui(Control ctrl, Action<Control> action)
+        public void Gui<T>(T ctrl, Action<T> action)
+            where T : Control
         {
             if (ctrl.InvokeRequired)
                 ctrl.Invoke(action, ctrl);
