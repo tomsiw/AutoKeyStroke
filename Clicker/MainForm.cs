@@ -124,7 +124,19 @@ namespace Clicker
 
         private void Start()
         {
-            startButton.Text = "Stop";
+            repeatTextBox.Text = repeatTextBox.Text.Replace(" ", "");
+            delayTextBox.Text = delayTextBox.Text.Replace(" ", "");
+
+            if (string.IsNullOrWhiteSpace(repeatTextBox.Text) || repeatTextBox.Text == "0")
+            {
+                repeatTextBox.Text = "0";
+                MessageBox.Show("Cycle count is not positive. Nothing to do.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(delayTextBox.Text) || delayTextBox.Text == "0")
+                delayTextBox.Text = "1";
+
             var repeat = int.Parse(repeatTextBox.Text);
             var delay = int.Parse(delayTextBox.Text);
             var keys = GetStrokeList();
@@ -136,6 +148,7 @@ namespace Clicker
             }
 
             cancel = new CancellationTokenSource();
+            startButton.Text = "Stop";
 
             Task.Run(() => DisplayDelay(delay))
                 .ContinueWith(t => PressKeyStrokes(repeat, keys))

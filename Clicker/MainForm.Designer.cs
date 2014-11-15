@@ -96,11 +96,13 @@
             this.delayTextBox.Location = new System.Drawing.Point(316, 170);
             this.delayTextBox.Mask = "00000";
             this.delayTextBox.Name = "delayTextBox";
-            this.delayTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.delayTextBox.RejectInputOnFirstFailure = true;
+            this.delayTextBox.ResetOnPrompt = false;
+            this.delayTextBox.ResetOnSpace = false;
             this.delayTextBox.Size = new System.Drawing.Size(38, 20);
             this.delayTextBox.TabIndex = 4;
             this.delayTextBox.Text = "5";
-            this.delayTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.delayTextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.delayTextBox.ValidatingType = typeof(int);
             // 
             // label1
@@ -139,14 +141,17 @@
             // repeatTextBox
             // 
             this.repeatTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.repeatTextBox.Culture = new System.Globalization.CultureInfo("");
             this.repeatTextBox.Location = new System.Drawing.Point(316, 148);
             this.repeatTextBox.Mask = "00000";
             this.repeatTextBox.Name = "repeatTextBox";
-            this.repeatTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.repeatTextBox.RejectInputOnFirstFailure = true;
+            this.repeatTextBox.ResetOnPrompt = false;
+            this.repeatTextBox.ResetOnSpace = false;
             this.repeatTextBox.Size = new System.Drawing.Size(56, 20);
             this.repeatTextBox.TabIndex = 4;
             this.repeatTextBox.Text = "1";
-            this.repeatTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.repeatTextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.repeatTextBox.ValidatingType = typeof(int);
             // 
             // label3
