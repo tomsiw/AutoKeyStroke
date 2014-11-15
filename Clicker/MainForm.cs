@@ -130,7 +130,7 @@ namespace Clicker
             if (string.IsNullOrWhiteSpace(repeatTextBox.Text) || repeatTextBox.Text == "0")
             {
                 repeatTextBox.Text = "0";
-                MessageBox.Show("Cycle count is not positive. Nothing to do.");
+                MessageBox.Show("Cycle count is not positive. Nothing to do.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -143,7 +143,7 @@ namespace Clicker
 
             if (keys.Count == 0)
             {
-                MessageBox.Show("Nothing to do");
+                MessageBox.Show("No key strokes defined. Nothing to do", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
